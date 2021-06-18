@@ -5,7 +5,7 @@ import {ROUTES_TABS_HOME} from '../utils/routes';
 
 const Tab = createBottomTabNavigator();
 
-const TabsRoutes: React.FC = ({navigation}: Props) => {
+const TabsRoutes: React.FC<any> = ({navigation}) => {
   const indexScreenFocusRef = useRef(0);
 
   return (
