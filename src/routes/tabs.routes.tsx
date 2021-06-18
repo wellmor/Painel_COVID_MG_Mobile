@@ -3,11 +3,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {ROUTES_TABS_HOME} from '../utils/routes';
 
+import CreateIcon from '../styles/create-icon';
+
 const Tab = createBottomTabNavigator();
 
 const TabsRoutes: React.FC<any> = ({navigation}) => {
-  const indexScreenFocusRef = useRef(0);
-
   return (
     <Tab.Navigator initialRouteName="HomeScreen">
       {ROUTES_TABS_HOME.map(route => (
@@ -15,6 +15,19 @@ const TabsRoutes: React.FC<any> = ({navigation}) => {
           key={route.index}
           name={route.routeName}
           component={route.screenComponent}
+          listeners={{
+            tabPress: () => {
+              // handleNavigation(route.index);
+            },
+          }}
+          options={{
+            tabBarLabel: route.label,
+            tabBarIcon: () =>
+              CreateIcon(route.icon, {
+                ...route.iconStyle,
+                strokeColor: 'red',
+              }),
+          }}
         />
       ))}
     </Tab.Navigator>

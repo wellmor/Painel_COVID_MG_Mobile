@@ -5,24 +5,24 @@ import Store from './store';
 import {useCitySelectedState} from './contexts/CitySelectedProvider';
 
 const App = () => {
-  // const [, citySelectDispach] = useCitySelectedState();
+  const [, citySelectDispach] = useCitySelectedState();
 
-  // const setCitySelect = async () => {
-  //   const responseCitySelected = await Store.get('@citySelected');
-  //   if (responseCitySelected) {
-  //     citySelectDispach({
-  //       type: 'CHANGE_CITY_SELECTED',
-  //       city_select: JSON.parse(responseCitySelected),
-  //     });
-  //   }
-  // };
+  const setCitySelect = async () => {
+    const responseCitySelected = await Store.get('@citySelected');
+    if (responseCitySelected) {
+      citySelectDispach({
+        type: 'CHANGE_CITY_SELECTED',
+        city_select: JSON.parse(responseCitySelected),
+      });
+    }
+  };
 
-  // useEffect(
-  //   useCallback(() => {
-  //     setCitySelect();
-  //   }, []),
-  //   [],
-  // );
+  useEffect(
+    useCallback(() => {
+      setCitySelect();
+    }, []),
+    [],
+  );
   return (
     <NavigationContainer>
       <Routes />

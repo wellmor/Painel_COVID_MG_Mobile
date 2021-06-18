@@ -1,12 +1,11 @@
 import axios from 'axios';
-import { API_URL, API_AUTHORIZATION } from '../../constants/config';
+import { API_URL } from '../../config/api'
 
 const api = axios.create({
   baseURL: API_URL,
   headers: {
     accept: 'application/json',
     'content-Type': 'application/json',
-    authorization: API_AUTHORIZATION,
   },
   timeout: 15000,
 });

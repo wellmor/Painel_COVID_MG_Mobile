@@ -1,11 +1,17 @@
 import styled from 'styled-components';
+import DeviceInfo from 'react-native-device-info';
 
 export const HeaderContainer = styled.View`
-  min-width: 100%;
-  height: 100%;
-  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: ${DeviceInfo.hasNotch() ? '90px' : '90px'};
+  padding-top: ${({insets = 0}) => insets + 5}px;
+  z-index: 99999;
+  background: white;
   align-items: center;
-  justify-content: space-between;
 `;
 
 export const HeaderButton = styled.TouchableOpacity.attrs({

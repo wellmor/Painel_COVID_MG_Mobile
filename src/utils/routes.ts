@@ -10,17 +10,23 @@ import DonatesRoutes from '../routes/donates.routes'
 /**
  *  Screens files
  */
-// import SplashScreen from '../screens/SplashScreen';
+import SplashScreen from '../screens/SplashScreen';
 import HomeScreen from '../screens/HomeScreen'
 import CitiesScreen from '../screens/CitiesScreen'
 
+/**
+ *  Icons tabs
+ */
+
+import {ICON_HOME, ICON_TIPS, ICON_ABOUT, ICON_DONATES} from '../constants/icons'
+
 
 export const ROUTES_SCREENS_MAIN = [
-  // {
-  //   index: 0,
-  //   routeName: 'SplashScreen',
-  //   screenComponent: SplashScreen,
-  // },
+  {
+    index: 0,
+    routeName: 'SplashScreen',
+    screenComponent: SplashScreen,
+  },
   {
     index: 1,
     routeName: 'TabsRoutes',
@@ -35,27 +41,44 @@ export const ROUTES_SCREENS_MAIN = [
 
 export const ROUTES_TABS_HOME = [
   {
-    index: 1,
+    index: 0,
     routeName: 'HomeRoutes',
+    label: 'Home',
     screenComponent: HomeRoutes,
+    icon: ICON_HOME,
+    iconStyle: {
+      size: '25px',
+    },
   },
 
   {
     index: 2,
     routeName: 'TipsRoutes',
     screenComponent: TipsRoutes,
+    icon: ICON_TIPS,
+    iconStyle: {
+      size: '25px',
+    },
   },
 
   {
     index: 3,
     routeName: 'AboutRoutes',
     screenComponent: AboutRoutes,
+    icon: ICON_ABOUT,
+    iconStyle: {
+      size: '25px',
+    },
   },
 
   {
     index: 4,
     routeName: 'DonatesRoutes',
     screenComponent: DonatesRoutes,
+    icon: ICON_DONATES,
+    iconStyle: {
+      size: '25px',
+    },
   },
 ];
 

@@ -7,7 +7,10 @@ const Stack = createStackNavigator();
 
 const ScreenRoutes: React.FC = () => {
   return (
-    <Stack.Navigator initialRouteName="TabsRoutes" headerMode="none">
+    <Stack.Navigator
+      headerMode="screen"
+      screenOptions={{headerShown: false}}
+      initialRouteName="SplashScreen">
       {ROUTES_SCREENS_MAIN.map(route => (
         <Stack.Screen
           key={route.index}
