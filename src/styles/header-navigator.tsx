@@ -8,10 +8,10 @@ export const HeaderContainer = styled.View`
   width: 100%;
   max-width: 100%;
   height: ${DeviceInfo.hasNotch() ? '90px' : '90px'};
+  padding: 0 20px;
   padding-top: ${({insets = 0}) => insets + 5}px;
   z-index: 99999;
   background: white;
-  align-items: center;
 `;
 
 export const HeaderButton = styled.TouchableOpacity.attrs({

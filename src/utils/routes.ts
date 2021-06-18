@@ -13,6 +13,7 @@ import DonatesRoutes from '../routes/donates.routes'
 import SplashScreen from '../screens/SplashScreen';
 import HomeScreen from '../screens/HomeScreen'
 import CitiesScreen from '../screens/CitiesScreen'
+import TipsScreen from '../screens/TipsScreen'
 
 /**
  *  Icons tabs
@@ -93,8 +94,8 @@ export const ROUTES_HOME = [
 export const ROUTES_TIPS = [
   {
     index: 1,
-    routeName: 'HomeScreen',
-    screenComponent: HomeScreen,
+    routeName: 'TipsScreen',
+    screenComponent: TipsScreen,
   },
 ]
 
