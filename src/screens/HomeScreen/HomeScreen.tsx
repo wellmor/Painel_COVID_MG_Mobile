@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useState, useCallback} from 'react';
 import {View, Text} from 'react-native';
+import {useFocusEffect} from '@react-navigation/native';
 
-// import { Container } from './styles';
+import {HomeContainer} from './HomeScreen.styles';
 
-const HomeScreen: React.FC = () => {
+const HomeScreen: React.FC<any> = ({navigation}) => {
+  const getData = async () => {
+    navigation.setOptions({
+      headerShown: true,
+    });
+  };
+
+  useFocusEffect(
+    useCallback(() => {
+      getData();
+    }, []),
+  );
+
   return (
-    <View>
+    <HomeContainer>
       <Text>HomeScreen</Text>
-    </View>
+    </HomeContainer>
   );
 };
 
