@@ -25,7 +25,9 @@ const HomeScreen: React.FC<any> = ({navigation}) => {
       headerShown: true,
       header: () => (
         <HeaderContainer insets={insets.top}>
-          <HeaderButton onPress={() => navigation.navigate('CitiesScreen')}>
+          <HeaderButton
+            pa="0"
+            onPress={() => navigation.navigate('CitiesScreen')}>
             <IconMarker mr="10px" />
             <HeaderTitle>{citySelectedState?.city_select?.city}</HeaderTitle>
           </HeaderButton>

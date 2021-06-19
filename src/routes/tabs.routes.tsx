@@ -1,9 +1,11 @@
-import React, {useCallback, useRef, useEffect} from 'react';
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {ROUTES_TABS_HOME} from '../utils/routes';
 
 import CreateIcon from '../styles/create-icon';
+
+import styled from 'styled-components';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,11 +23,13 @@ const TabsRoutes: React.FC<any> = ({navigation}) => {
             },
           }}
           options={{
-            tabBarLabel: route.label,
-            tabBarIcon: () =>
+            tabBarLabel: ({focused}) => (
+              <TabLabel active={focused}>{route?.label}</TabLabel>
+            ),
+            tabBarIcon: ({focused}) =>
               CreateIcon(route.icon, {
                 ...route.iconStyle,
-                strokeColor: 'red',
+                strokeColor: focused ? '#2C88E8' : '#00000080',
               }),
           }}
         />
@@ -35,3 +39,8 @@ const TabsRoutes: React.FC<any> = ({navigation}) => {
 };
 
 export default TabsRoutes;
+const TabLabel = styled.Text`
+  font-size: 12px;
+  font-weight: 600;
+  color: ${({active}) => (active ? '#2C88E8' : '#00000080')};
+`;

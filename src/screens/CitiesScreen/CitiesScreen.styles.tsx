@@ -17,10 +17,13 @@ export const CitiesSectionList = styled.SectionList.attrs(({insets}) => {
   };
 })``;
 
-export const CitiesSearchBar = styled.TextInput`
-  width: 80%;
+export const CitiesSearchBar = styled.TextInput.attrs({
+  placeholder: 'Pesquise por municípios, regiões ou estados de MG',
+  autoFocus: true,
+})`
+  width: ${({citySelect}) => (citySelect ? '80%' : '100%')};
   height: 40px;
-  padding: 0 2%;
+  padding: 0 4%;
   border-radius: 4px;
   background: #00000009;
   top: -5px;

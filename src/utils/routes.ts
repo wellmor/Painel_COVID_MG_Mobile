@@ -14,6 +14,8 @@ import SplashScreen from '../screens/SplashScreen';
 import HomeScreen from '../screens/HomeScreen'
 import CitiesScreen from '../screens/CitiesScreen'
 import TipsScreen from '../screens/TipsScreen'
+import AboutScreen from '../screens/AboutScreen'
+import DonatesScreen from '../screens/DonatesScreen'
 
 /**
  *  Icons tabs
@@ -51,30 +53,30 @@ export const ROUTES_TABS_HOME = [
       size: '25px',
     },
   },
-
   {
     index: 2,
     routeName: 'TipsRoutes',
+    label: 'Dicas',
     screenComponent: TipsRoutes,
     icon: ICON_TIPS,
     iconStyle: {
       size: '25px',
     },
   },
-
   {
     index: 3,
     routeName: 'AboutRoutes',
+    label: 'Sobre',
     screenComponent: AboutRoutes,
     icon: ICON_ABOUT,
     iconStyle: {
       size: '25px',
     },
   },
-
   {
     index: 4,
     routeName: 'DonatesRoutes',
+    label: 'Doações',
     screenComponent: DonatesRoutes,
     icon: ICON_DONATES,
     iconStyle: {
@@ -102,15 +104,15 @@ export const ROUTES_TIPS = [
 export const ROUTES_ABOUT = [
   {
     index: 1,
-    routeName: 'HomeScreen',
-    screenComponent: HomeScreen,
+    routeName: 'AboutScreen',
+    screenComponent: AboutScreen,
   },
 ]
 
 export const ROUTES_DONATES = [
   {
     index: 1,
-    routeName: 'HomeScreen',
-    screenComponent: HomeScreen,
+    routeName: 'DonatesScreen',
+    screenComponent: DonatesScreen,
   },
 ]

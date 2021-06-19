@@ -24,7 +24,7 @@ import {
   HeaderTitle,
 } from '../../styles/header-navigator';
 
-import {IconMarker} from '../../styles/generate-icons';
+import {IconMarker, IconBack} from '../../styles/generate-icons';
 
 const CitiesScreen: React.FC<any> = ({navigation}) => {
   const insets = useSafeAreaInsets();
@@ -59,11 +59,22 @@ const CitiesScreen: React.FC<any> = ({navigation}) => {
       headerShown: true,
       header: () => (
         <HeaderContainer insets={insets.top}>
-          <CitiesSearchBar onChangeText={value => handleFilterCities(value)} />
+          {citySelect && (
+            <HeaderButton
+              mb="3px"
+              ml="-10px"
+              onPress={() => navigation.goBack()}>
+              <IconBack width={40} height={40} />
+            </HeaderButton>
+          )}
+          <CitiesSearchBar
+            citySelect={citySelect}
+            onChangeText={value => handleFilterCities(value)}
+          />
         </HeaderContainer>
       ),
     });
-  }, [citiesFilter]);
+  }, [citiesFilter, citySelect]);
 
   const renderItem = useCallback(
     ({item}) =>

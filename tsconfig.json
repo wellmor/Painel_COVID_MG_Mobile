@@ -12,7 +12,8 @@
     "moduleResolution": "node",               
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": false
+    "skipLibCheck": false,
+    "typeRoots" : ["src/types"]
   },
   "include": [
     "./**/*",

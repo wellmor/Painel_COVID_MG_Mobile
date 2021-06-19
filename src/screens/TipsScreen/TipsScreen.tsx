@@ -27,9 +27,7 @@ const TipsScreen: React.FC<any> = ({navigation}) => {
       headerShown: true,
       header: () => (
         <HeaderContainer insets={insets.top}>
-          <HeaderButton onPress={() => navigation.navigate('CitiesScreen')}>
-            <HeaderTitle>Dicas</HeaderTitle>
-          </HeaderButton>
+          <HeaderTitle>Dicas</HeaderTitle>
         </HeaderContainer>
       ),
     });

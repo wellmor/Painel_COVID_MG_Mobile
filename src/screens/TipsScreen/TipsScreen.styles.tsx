@@ -12,7 +12,7 @@ export const TipsList = styled.FlatList.attrs({
   contentContainerStyle: {
     paddingVertical: 70,
     paddingBottom: Platform.OS === 'ios' ? 30 : 80, // ios 60
-    paddingTop: Platform.OS === 'ios' ? 65 : 110, // ios nao tinha
+    paddingTop: Platform.OS === 'ios' ? 60 : 110, // ios nao tinha
     position: 'relative',
   },
 })``;
